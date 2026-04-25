@@ -1,1 +1,1 @@
-Testing CI pipeline
+Testing the CI pipeline
