@@ -1,22 +1,37 @@
 {
   "name": "devops-pipelines",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Small Node.js service used to demonstrate a production-grade CI/CD pipeline with GitHub Actions",
+  "main": "src/server.js",
   "scripts": {
-    "run": "node index.js",
-    "test": "node test.js"
+    "start": "node src/server.js",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-lines=80 --test-coverage-include=src/**",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=20"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mohammad-El-Zein/devops-pipelines.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ci",
+    "cd",
+    "github-actions",
+    "devops"
+  ],
+  "author": "Mohammad El Zein",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Mohammad-El-Zein/devops-pipelines/issues"
   },
-  "homepage": "https://github.com/Mohammad-El-Zein/devops-pipelines#readme"
+  "homepage": "https://github.com/Mohammad-El-Zein/devops-pipelines#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0"
+  }
 }
