@@ -1,0 +1,11 @@
+.git
+.github
+.idea
+node_modules
+coverage
+test
+*.md
+qodana.yaml
+eslint.config.js
+Dockerfile
+.dockerignore
