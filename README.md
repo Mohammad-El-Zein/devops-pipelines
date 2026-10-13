@@ -26,7 +26,7 @@ security scanning, containerization, and automated releases to GitHub Container 
 | [`ci-cd.yml`](.github/workflows/ci-cd.yml) | push to `main`, pull requests | Lint, test matrix, coverage gate, dependency audit, Docker build, container smoke test, Trivy image scan, publish `latest` + `sha-*` image to GHCR |
 | [`release.yml`](.github/workflows/release.yml) | tags `v*.*.*` | Publishes semver-tagged images (`1.2.3`, `1.2`, `1`) and a GitHub Release with generated notes |
 | [`codeql.yml`](.github/workflows/codeql.yml) | push, pull requests, weekly | Static security analysis (SAST) |
-| [`qodana_code_quality.yml`](.github/workflows/qodana_code_quality.yml) | push, pull requests | JetBrains Qodana code quality scan (requires `QODANA_TOKEN` secret) |
+| [`qodana_code_quality.yml`](.github/workflows/qodana_code_quality.yml) | push, pull requests | JetBrains Qodana code quality scan (community linter, no token needed) |
 | [`dependabot.yml`](.github/dependabot.yml) | weekly | Update PRs for npm packages, GitHub Actions and the Docker base image |
 
 Practices used: least-privilege `permissions`, `concurrency` to cancel outdated runs,
