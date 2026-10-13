@@ -1,12 +1,12 @@
 # syntax=docker/dockerfile:1
 
-FROM node:22-alpine AS deps
+FROM node:26-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 # mkdir: newer npm versions skip node_modules when there are no runtime dependencies
 RUN npm ci --omit=dev --ignore-scripts && mkdir -p node_modules
 
-FROM node:22-alpine AS runtime
+FROM node:26-alpine AS runtime
 ENV NODE_ENV=production \
     PORT=3000
 # npm is not needed at runtime; removing it keeps its CVEs out of the image scan
